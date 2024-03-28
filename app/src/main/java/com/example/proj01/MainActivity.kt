@@ -1,20 +1,32 @@
 package com.example.proj01
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var btn_mais: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        //chamando layout
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
+        // Objetos -> componentes da tela:
+        val radioFemale = findViewById<RadioButton>(R.id.radio_female)
+        val radioMale = findViewById<RadioButton>(R.id.radio_male)
+        val inputAge = findViewById<EditText>(R.id.input_age)
+        val btnCalculate = findViewById<Button>(R.id.btn_calculate)
+        val btnPlus = findViewById<Button>(R.id.btn_plus)
+        val output = findViewById<TextView>(R.id.txt_output)
+
+
     }
+
+
 }
